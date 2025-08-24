@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Text Highlighter & Saver",
+  "version": "1.0",
+  "description": "Highlight and save text from any webpage with AI summarization",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "View Saved Highlights"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["highlight-popup.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

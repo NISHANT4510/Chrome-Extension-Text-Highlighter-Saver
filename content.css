@@ -1,0 +1,74 @@
+/* Styles for the highlight popup that appears on pages */
+.highlight-saver-popup {
+  position: absolute;
+  z-index: 10000;
+  background: white;
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  max-width: 300px;
+  animation: popupFadeIn 0.2s ease-out;
+}
+
+.popup-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+}
+
+#save-highlight-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+#save-highlight-btn:hover {
+  background: #45a049;
+  transform: translateY(-1px);
+}
+
+#close-popup-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1;
+  min-width: 24px;
+  transition: all 0.2s ease;
+}
+
+#close-popup-btn:hover {
+  background: #da190b;
+  transform: scale(1.1);
+}
+
+@keyframes popupFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Ensure the popup appears above all other content */
+.highlight-saver-popup * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
